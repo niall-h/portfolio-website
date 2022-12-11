@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Box,
+  Typography,
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+  Button,
+  Link,
+} from "@mui/material";
+import { motion } from "framer-motion";
 
-function App() {
+const App = () => {
+  let theme = createTheme();
+  theme = responsiveFontSizes(theme);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100vh"
+      width="100vw"
+      sx={{ backgroundColor: "white" }}
+    >
+      <Box display="block" textAlign="center">
+        <ThemeProvider theme={theme}>
+          <Typography variant="h2" mb={5}>
+            Hey! This is Nyan.
+          </Typography>
+          <Typography variant="h5" mb={5}>
+            I finally afforded my own domain so my portfolio is now being hosted
+            on{" "}
+            <Link href="http://www.nyanminhtet.com/">www.nyanminhtet.com</Link>!
+          </Typography>
+        </ThemeProvider>
+        <Button
+          variant="contained"
+          size="large"
+          href="http://www.nyanminhtet.com"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Take Me There!
+        </Button>
+      </Box>
+    </Box>
   );
-}
+};
 
 export default App;
