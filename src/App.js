@@ -8,7 +8,6 @@ import {
   Button,
   Link,
 } from "@mui/material";
-import { motion } from "framer-motion";
 
 const App = () => {
   let theme = createTheme();
