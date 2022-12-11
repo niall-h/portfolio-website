@@ -8,8 +8,25 @@ import {
   Button,
   Link,
 } from "@mui/material";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
 
 const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Content />} />
+        <Route exact path="/portfolio-website" element={<Content />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+const Content = () => {
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
 
